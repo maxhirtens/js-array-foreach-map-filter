@@ -7,7 +7,11 @@ Examples:
 
 */
 function doubleValues(arr){
-    
+    let newArr = [];
+    arr.forEach(function(value){
+    newArr.push(value*2);
+    })
+    return newArr;
 }
 
 /*
@@ -19,8 +23,15 @@ Examples:
 
 */
 function onlyEvenValues(arr){
-    
+    let newArr = [];
+    arr.forEach(function(value){
+        if(value % 2 === 0){
+        newArr.push(value);
+        }
+});
+    return newArr;
 }
+
 
 /*
 Write a function called showFirstAndLast which accepts an array of strings and returns a new array with only the first and last character of each string.
@@ -31,20 +42,30 @@ Examples:
 
 */
 function showFirstAndLast(arr){
-    
+    let newArr = [];
+    arr.forEach(function(value){
+        newArr.push(value[0] + value[value.length-1]);
+});
+    return newArr;
 }
 
 /*
-Write a function called addKeyAndValue which accepts an array of objects, a key, and a value and returns the array passed to the function with the new key and value added for each object 
+Write a function called addKeyAndValue which accepts an array of objects, a key, and a value and returns the array passed to the function with the new key and value added for each object
 
 Examples:
-    addKeyAndValue([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'title', 'instructor') 
-    
-    // [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
+    addKeyAndValue([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'title', 'instructor')
+
+
 
 */
+// let arr = [{name: 'Eli'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}];
+
 function addKeyAndValue(arr,key,value){
-    
+    arr.forEach(function(item){
+        item[key] = value;
+    }
+    )
+    return arr;
 }
 
 /*
@@ -58,7 +79,19 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   
+    let arr = str.split('');
+    let obj = {};
+    const vowels = 'aeiou';
+    arr.forEach(function(char){
+        if(vowels.indexOf(char) !== -1){
+            if(obj[char]) {
+                obj[char]++;
+            }   else {
+                    obj[char] = 1;
+        }
+    }
+})
+    return obj;
 }
 
 /*
@@ -80,7 +113,7 @@ Examples:
 */
 
 function valTimesIndex(arr){
-    
+
 }
 
 /*
@@ -91,18 +124,18 @@ Examples:
 */
 
 function extractKey(arr, key){
-    
+
 }
 
 /*
-Write a function called extractFullName which accepts an array of objects and returns a new array with the value of the key with a name of "first" and the value of a key with the name of  "last" in each object, concatenated together with a space. 
+Write a function called extractFullName which accepts an array of objects and returns a new array with the value of the key with a name of "first" and the value of a key with the name of  "last" in each object, concatenated together with a space.
 
 Examples:
     extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
 */
 
 function extractFullName(arr){
-    
+
 }
 
 /*
